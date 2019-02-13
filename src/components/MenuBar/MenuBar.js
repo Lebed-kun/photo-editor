@@ -7,8 +7,7 @@ import { menuItems } from '../../constants/menu_items';
 
 class MenuBarConnect extends Component {
   componentDidMount() {
-    const items = menuItems;
-    this.props.initMenu(items);
+    this.props.initMenu(menuItems);
   }
 
   render() {

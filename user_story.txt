@@ -1,6 +1,6 @@
 #1 When user visits a page, he should see header with logo, "filter", "adjust", "crop", "resize", "rotate", "flip" tabs and "Download" button. // +++
 
-#2 He should see main section with "Upload" button when  he visits a page
+#2 He should see main section with "Upload" button when  he visits a page // +++
 
 #3 All tabs and the "download" button are locked until user uploads picture
 
