@@ -3,16 +3,22 @@ import { connect } from 'react-redux';
 import './MainSection.css';
 
 import { initMainSection } from '../../actions';
-import { uploadButton } from '../../constants/main_section_contents';
+import UploadButton from '../UploadButton/UploadButton';
+import Canvas from '../Canvas/Canvas';
 
 class MainSectionConnect extends Component {
   componentDidMount() {
-    this.props.initMainSection(uploadButton);
+    this.props.initMainSection(<UploadButton />);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.imageUrl !== prevProps.imageUrl) {
+      this.props.initMainSection(<Canvas />);
+    }
   }
 
   render() {
     const contents = this.props.contents[this.props.contents.length - 1];
-    console.log(contents);
 
     return (
       <div className="MainSection">
@@ -29,7 +35,8 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
-  return { contents : state.contents }
+  return { contents : state.contents,
+          imageUrl : state.imageUrl}
 }
 
 const MainSection = connect(mapStateToProps, mapDispatchToProps) (MainSectionConnect)

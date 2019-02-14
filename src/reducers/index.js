@@ -1,8 +1,10 @@
-import { INIT_MENU, INIT_MAIN_SECTION } from '../constants';
+import { INIT_MENU, INIT_MAIN_SECTION, INIT_IMAGE,
+INVALID_FILE_FORMAT } from '../constants/index';
 
 const initialState = {
   items : [],
-  contents : []
+  contents : [],
+  imageUrl : []
 }
 
 function rootReducer(state = initialState, action) {
@@ -16,6 +18,16 @@ function rootReducer(state = initialState, action) {
     return Object.assign({}, state, {
       contents : state.contents.concat(action.payload)
     });
+  }
+
+  if (action.type === INIT_IMAGE) {
+    return Object.assign({}, state, {
+      imageUrl : state.imageUrl.concat(action.payload)
+    });
+  }
+
+  if (action.type === INVALID_FILE_FORMAT) {
+    alert('Wrong file format!');
   }
   return state;
 }
