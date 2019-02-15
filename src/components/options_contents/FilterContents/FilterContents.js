@@ -10,3 +10,7 @@ class FilterContentsConnect extends Component {
     )
   }
 }
+
+const FilterContents = connect (null) (FilterContentsConnect);
+
+export default FilterContents;
