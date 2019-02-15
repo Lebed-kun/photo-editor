@@ -9,19 +9,31 @@ class MenuBarConnect extends Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.handleClickOnDownload = this.handleClickOnDownload.bind(this);
   }
 
   handleClick(event) {
     const name = event.target.getAttribute('name');
     const isLocked = this.props.isMenuLocked[this.props.isMenuLocked.length - 1];
     const activeTab = this.props.activeTab[this.props.activeTab.length - 1];
-    
+
     if (!isLocked && activeTab.name !== name) {
       this.props.setActiveTab({ name : name });
     } else if (!isLocked) {
       this.props.setActiveTab({ name : '' });
     }
 
+  }
+
+  handleClickOnDownload() {
+    const isLocked = this.props.isMenuLocked[this.props.isMenuLocked.length - 1];
+
+    if (!isLocked) {
+      const canvas = document.querySelector('.Canvas');
+      const link = document.querySelector('.MenuBar button a');
+      link.href = canvas.toDataURL('image/jpg');
+      link.click();
+    }
   }
 
   componentDidMount() {
@@ -44,11 +56,14 @@ class MenuBarConnect extends Component {
               style={{color : el.title === activeTab.name ? '#35daff' : 'white'}}
               name={el.title}></i>
               <p name={el.title}>{el.title}</p>
+
             </li>
           ))}
         </ul>
 
-        <button className={isLocked ? 'locked-button' : 'unlocked-button'}>
+        <button className={isLocked ? 'locked-button' : 'unlocked-button'}
+        onClick={this.handleClickOnDownload}>
+          <a download="photo.jpg" style={{display : 'none'}}></a>
           <i className="far fa-arrow-alt-circle-down"></i>
           <p>Download</p>
         </button>

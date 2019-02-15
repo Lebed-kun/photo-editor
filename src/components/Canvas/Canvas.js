@@ -14,8 +14,9 @@ class CanvasConnect extends Component {
       image.src = this.props.imageUrl;
 
       image.onload = () => {
-        context.drawImage(image, 0, 0, image.width, image.height,
-                          0, 0, canvas.width, canvas.height);
+        canvas.width = image.width;
+        canvas.height = image.height;
+        context.drawImage(image, 0, 0, image.width, image.height);
       }
 
       this.props.unlockMenu();
@@ -25,7 +26,7 @@ class CanvasConnect extends Component {
 
   render() {
     return (
-      <canvas className="Canvas" width="360px" height="360px">
+      <canvas className="Canvas">
       </canvas>
     )
   }

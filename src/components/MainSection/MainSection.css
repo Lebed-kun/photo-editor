@@ -1,6 +1,6 @@
 .MainSection {
   background-color: #1c1c1c;
-  height: 82.65vh;
+  min-height: 82.65vh;
 
   display: flex;
   justify-content: center;
