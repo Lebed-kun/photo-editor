@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './Canvas.css';
 import { connect } from 'react-redux';
 
+import { unlockMenu, setActiveTab } from '../../actions';
+
 class CanvasConnect extends Component {
   componentDidMount() {
     if (this.props.imageUrl) {
@@ -15,6 +17,9 @@ class CanvasConnect extends Component {
         context.drawImage(image, 0, 0, image.width, image.height,
                           0, 0, canvas.width, canvas.height);
       }
+
+      this.props.unlockMenu();
+      this.props.setActiveTab({ name : 'filter'});
     }
   }
 
@@ -30,6 +35,11 @@ function mapStateToProps(state) {
   return { imageUrl : state.imageUrl}
 }
 
-const Canvas = connect(mapStateToProps) (CanvasConnect);
+function mapDispatchToProps(dispatch) {
+  return { unlockMenu : () => dispatch(unlockMenu()),
+           setActiveTab : tab => dispatch(setActiveTab(tab))}
+}
+
+const Canvas = connect(mapStateToProps, mapDispatchToProps) (CanvasConnect);
 
 export default Canvas;

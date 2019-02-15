@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './UploadButton.css';
 import { connect } from 'react-redux';
 
-import { openFile, uploadImage } from '../../actions';
+import { openFile, uploadImage, unlockMenu, setActiveTab } from '../../actions';
 
 class UploadButtonConnect extends Component {
   constructor(props) {

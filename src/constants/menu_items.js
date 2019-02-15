@@ -3,25 +3,25 @@ import uuidv1 from 'uuid';
 export const menuItems = [{
   id : uuidv1(),
   iconClass : 'fas fa-images',
-  title : 'Filter'
+  title : 'filter'
 }, {
   id : uuidv1(),
   iconClass : 'fas fa-adjust',
-  title : 'Adjust'
+  title : 'adjust'
 }, {
   id : uuidv1(),
   iconClass : 'fas fa-crop-alt',
-  title : 'Crop'
+  title : 'crop'
 }, {
   id : uuidv1(),
   iconClass : 'fas fa-expand',
-  title : 'Resize'
+  title : 'resize'
 }, {
   id : uuidv1(),
   iconClass : 'fas fa-undo',
-  title : 'Rotate'
+  title : 'rotate'
 }, {
   id : uuidv1(),
   iconClass : 'fas fa-arrows-alt-h',
-  title : 'Flip'
+  title : 'flip'
 }];
