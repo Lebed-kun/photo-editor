@@ -38,7 +38,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { resetTab : () => dispatch(setActiveTab(''))}
+  return { resetTab : () => dispatch(setActiveTab({ name : '' }))}
 }
 
 const OptionsBar = connect(mapStateToProps, mapDispatchToProps) (OptionsBarConnect);

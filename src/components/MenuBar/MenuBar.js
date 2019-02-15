@@ -6,6 +6,24 @@ import { initMenu, setActiveTab } from '../../actions';
 import { menuItems } from '../../constants/menu_items';
 
 class MenuBarConnect extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    const name = event.target.getAttribute('name');
+    const isLocked = this.props.isMenuLocked[this.props.isMenuLocked.length - 1];
+    const activeTab = this.props.activeTab[this.props.activeTab.length - 1];
+    
+    if (!isLocked && activeTab.name !== name) {
+      this.props.setActiveTab({ name : name });
+    } else if (!isLocked) {
+      this.props.setActiveTab({ name : '' });
+    }
+
+  }
+
   componentDidMount() {
     this.props.initMenu(menuItems);
   }
@@ -19,10 +37,13 @@ class MenuBarConnect extends Component {
         <ul>
           {this.props.items.map(el => (
             <li key={el.id}
-            style={{cursor : isLocked ? 'not-allowed' : 'pointer'}}>
+            style={{cursor : isLocked ? 'not-allowed' : 'pointer'}}
+            name={el.title}
+            onClick={this.handleClick}>
               <i className={el.iconClass}
-              style={{color : el.title === activeTab.name ? '#35daff' : 'white'}}></i>
-              <p>{el.title}</p>
+              style={{color : el.title === activeTab.name ? '#35daff' : 'white'}}
+              name={el.title}></i>
+              <p name={el.title}>{el.title}</p>
             </li>
           ))}
         </ul>
