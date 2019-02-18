@@ -1,0 +1,13 @@
+.FilterContents {
+  display: flex;
+}
+
+.FilterContents li {
+  padding: 1rem;
+}
+
+.FilterContents p {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  cursor: pointer;
+}

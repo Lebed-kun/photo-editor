@@ -1,5 +1,5 @@
 import { INIT_MENU, INIT_MAIN_SECTION, OPEN_FILE,
-  UPLOAD_IMAGE, INVALID_FILE_FORMAT, INIT_IMAGE, UNLOCK_MENU, SET_ACTIVE_TAB }
+  UPLOAD_IMAGE, INVALID_FILE_FORMAT, INIT_IMAGE, UNLOCK_MENU, SET_ACTIVE_TAB, SET_FILTER }
 from '../constants/index';
 
 export function initMenu(payload) {
@@ -32,4 +32,8 @@ export function unlockMenu(payload) {
 
 export function setActiveTab(payload) {
   return { type : SET_ACTIVE_TAB, payload }
+}
+
+export function setFilter(payload) {
+  return { type : SET_FILTER, payload }
 }

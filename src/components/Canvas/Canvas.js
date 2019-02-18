@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Canvas.css';
 import { connect } from 'react-redux';
+import { fabric } from 'fabric';
 
 import { unlockMenu, setActiveTab } from '../../actions';
 
@@ -26,7 +27,7 @@ class CanvasConnect extends Component {
 
   render() {
     return (
-      <canvas className="Canvas">
+      <canvas className="Canvas" id="Canvas">
       </canvas>
     )
   }

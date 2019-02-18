@@ -22,7 +22,7 @@ export function uploadImageMiddleware({ dispatch }) {
         const reader = new FileReader();
         const file = action.payload.file;
 
-        let extension = file.name.substr((file.name.lastIndexOf('.') +1));
+        let extension = file.name.substr((file.name.lastIndexOf('.') + 1));
 
         if (validExtensions.indexOf(extension) == -1) {
           return dispatch(invalidFileFormat(file.name));

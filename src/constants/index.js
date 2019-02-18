@@ -6,3 +6,4 @@ export const INVALID_FILE_FORMAT = "INVALID_FILE_FORMAT"
 export const INIT_IMAGE = "INIT_IMAGE";
 export const UNLOCK_MENU = "UNLOCK_MENU";
 export const SET_ACTIVE_TAB = "SET_ACTIVE_TAB";
+export const SET_FILTER = "SET_FILTER";
