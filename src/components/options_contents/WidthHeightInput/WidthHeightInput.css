@@ -1,0 +1,44 @@
+.WidthHeightInput {
+  display: flex;
+  width: 20%;
+  margin-left: 7%;
+}
+
+.WidthHeightInput .size-tile {
+  display: flex;
+
+  position: relative;
+
+  width: 30%;
+}
+
+.WidthHeightInput .size-tile p {
+  position: absolute;
+  left: 0.33rem;
+
+  font-size: 1.25rem;
+  color: white;
+}
+
+.WidthHeightInput input {
+  padding-left: 1.6rem;
+  width: 100%;
+  margin-left: 0.5px;
+
+  font-size: 1.25rem;
+  color: white;
+  background-color: black;
+
+  border: 2px solid grey;
+  outline: none;
+  border-radius: 5px;
+  -o-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.WidthHeightInput > p {
+  color: white;
+  margin-left: 2.1rem;
+  margin-right: 0.2rem;
+}

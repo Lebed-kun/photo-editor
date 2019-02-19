@@ -1,0 +1,16 @@
+.ApplyButton {
+  padding: 0.5rem 1rem;
+  color: #35daff;
+  text-transform: uppercase;
+
+  margin-left: 8%;
+
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  -o-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+
+  cursor: not-allowed;
+}
