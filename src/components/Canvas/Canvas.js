@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Canvas.css';
+
 import { connect } from 'react-redux';
-import { fabric } from 'fabric';
 
 import { unlockMenu, setActiveTab } from '../../actions';
 
