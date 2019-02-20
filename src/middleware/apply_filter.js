@@ -13,6 +13,6 @@ export function applyFilter(canvasId, imageUrl, filter) {
     canvas.add(img);
   });
 
-  document.querySelector('.Canvas').style.width = '30%';
-  document.querySelector('.Canvas').style.height = 'auto';
+  document.getElementById(canvasId).style.width = '35%';
+  document.getElementById(canvasId).style.height = 'auto';
 }

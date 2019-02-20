@@ -27,8 +27,8 @@ class CanvasConnect extends Component {
 
   render() {
     return (
-      <canvas className="Canvas" id="Canvas">
-      </canvas>
+        <canvas className="Canvas" id="Canvas">
+        </canvas>
     )
   }
 }

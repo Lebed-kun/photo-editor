@@ -1,6 +1,5 @@
 import { INIT_MENU, INIT_MAIN_SECTION, INIT_IMAGE,
-INVALID_FILE_FORMAT, UNLOCK_MENU, SET_ACTIVE_TAB, SET_FILTER,
-SET_CROP_SIZE } from '../constants/index'
+INVALID_FILE_FORMAT, UNLOCK_MENU, SET_ACTIVE_TAB, SET_FILTER } from '../constants/index'
 
 import { filters } from '../constants/filters';
 
@@ -10,8 +9,7 @@ const initialState = {
   imageUrl : [],
   isMenuLocked : [],
   activeTab : [],
-  filter : [],
-  cropSize : []
+  filter : []
 }
 
 function rootReducer(state = initialState, action) {
@@ -55,12 +53,6 @@ function rootReducer(state = initialState, action) {
   if (action.type == SET_FILTER) {
     return Object.assign({}, state, {
       filter : state.filter.concat(action.payload)
-    })
-  }
-
-  if (action.type == SET_CROP_SIZE) {
-    return Object.assign({}, state, {
-      cropSize : state.cropSize.concat(action.payload)
     })
   }
   return state;

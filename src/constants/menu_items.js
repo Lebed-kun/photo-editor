@@ -10,12 +10,8 @@ export const menuItems = [{
   title : 'adjust'
 }, {
   id : uuidv1(),
-  iconClass : 'fas fa-crop-alt',
-  title : 'crop'
-}, {
-  id : uuidv1(),
-  iconClass : 'fas fa-expand',
-  title : 'resize'
+  iconClass : 'fas fa-palette',
+  title : 'color'
 }, {
   id : uuidv1(),
   iconClass : 'fas fa-undo',
