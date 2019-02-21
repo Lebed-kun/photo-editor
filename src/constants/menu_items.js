@@ -12,12 +12,4 @@ export const menuItems = [{
   id : uuidv1(),
   iconClass : 'fas fa-palette',
   title : 'color'
-}, {
-  id : uuidv1(),
-  iconClass : 'fas fa-undo',
-  title : 'rotate'
-}, {
-  id : uuidv1(),
-  iconClass : 'fas fa-arrows-alt-h',
-  title : 'flip'
 }];
