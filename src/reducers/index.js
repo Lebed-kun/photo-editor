@@ -1,5 +1,6 @@
 import { INIT_MENU, INIT_MAIN_SECTION, INIT_IMAGE,
-INVALID_FILE_FORMAT, UNLOCK_MENU, SET_ACTIVE_TAB, SET_FILTER } from '../constants/index'
+INVALID_FILE_FORMAT, UNLOCK_MENU, SET_ACTIVE_TAB, SET_FILTER,
+SET_COLOR } from '../constants/index'
 
 import { filters } from '../constants/filters';
 
@@ -9,7 +10,8 @@ const initialState = {
   imageUrl : [],
   isMenuLocked : [],
   activeTab : [],
-  filter : []
+  filter : [],
+  color : []
 }
 
 function rootReducer(state = initialState, action) {
@@ -18,7 +20,8 @@ function rootReducer(state = initialState, action) {
       items : state.items.concat(action.payload),
       isMenuLocked : state.isMenuLocked.concat([true]),
       activeTab : state.activeTab.concat({ name : '' }),
-      filter : state.filter.concat(filters.find(el => el.name == 'normal'))
+      filter : state.filter.concat(filters.find(el => el.name == 'normal')),
+      color : state.color.concat({ color : 0 })
     });
   }
 
@@ -53,6 +56,12 @@ function rootReducer(state = initialState, action) {
   if (action.type == SET_FILTER) {
     return Object.assign({}, state, {
       filter : state.filter.concat(action.payload)
+    })
+  }
+
+  if (action.type == SET_COLOR) {
+    return Object.assign({}, state, {
+      color : state.color.concat(action.payload)
     })
   }
   return state;

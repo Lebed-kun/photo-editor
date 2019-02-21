@@ -1,0 +1,40 @@
+.ColorContents {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.ColorContents .slider-tile {
+  margin: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ColorContents p {
+
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+.ColorContents button {
+  background-color: #e2ad0b;
+  color: white;
+  font-size: 1.5rem;
+
+  padding: 0.5rem 1rem;
+  margin-left: 5%;
+
+  border: none;
+  border-radius: 5px;
+  -o-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.ColorContents button:hover {
+  background-color: #bc9210;
+}
